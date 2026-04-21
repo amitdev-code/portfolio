@@ -388,7 +388,7 @@ export const education = [
 
 export const stats = [
   { label: "Years Experience", value: "5+" },
-  { label: "Projects Delivered", value: "30+" },
+  { label: "Projects Delivered", value: "12+" },
   { label: "API Response Boost", value: "30%" },
   { label: "Manual Effort Saved", value: "40%" },
 ];
