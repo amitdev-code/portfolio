@@ -112,7 +112,7 @@ export default function HeroSection() {
         <div className="flex gap-10">
           {[
             { val: "5+", label: "Years Exp." },
-            { val: "30+", label: "Projects" },
+            { val: "12+", label: "Projects" },
             { val: "40%", label: "Effort Saved" },
             { val: "30%", label: "API Boost" },
           ].map((s) => (
