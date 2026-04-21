@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Target, Lightbulb, Zap, Code2, AlertTriangle, CheckCircle2, ImageIcon } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Target, Lightbulb, Zap, Code2, AlertTriangle, ImageIcon } from "lucide-react";
 import { GithubIcon } from "@/components/SocialIcons";
 import { getTechIcon } from "@/lib/techIcons";
+import Image from "next/image";
 import { projects } from "@/data/portfolio";
 
 type Project = (typeof projects)[0];
@@ -203,7 +204,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
           </div>
         </motion.div>
 
-        {/* Screenshots — only shown when available */}
+        {/* Screenshots — only shown when images are available */}
         {project.screenshots.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -215,12 +216,22 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
               <ImageIcon size={14} />
               Screenshots
             </div>
-            <div className="grid sm:grid-cols-3 gap-4">
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
               {project.screenshots.map((shot, i) => (
-                <div key={i} className="card aspect-video flex flex-col items-center justify-center gap-3 card-hover">
-                  <span className="text-xs text-white/65">{shot.label}</span>
-                  <span className="text-xs text-white/20">Coming soon</span>
-                </div>
+                "src" in shot && shot.src ? (
+                  <div
+                    key={i}
+                    className="relative w-full overflow-hidden rounded-xl border border-white/8 break-inside-avoid card-hover group"
+                  >
+                    <Image
+                      src={shot.src as string}
+                      alt={shot.label}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                    />
+                  </div>
+                ) : null
               ))}
             </div>
           </motion.div>

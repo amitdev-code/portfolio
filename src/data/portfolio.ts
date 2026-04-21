@@ -9,7 +9,7 @@ export const personalInfo = {
   summary:
     "I engineer fast, intelligent web systems — from React frontends to serverless cloud backends — and specialize in wiring LLMs into real products that automate real workflows.",
   availableForWork: true,
-  noticePeriod: "45 Days",
+  noticePeriod: "30 Days",
 };
 
 export const skills = {
@@ -108,9 +108,16 @@ export const projects = [
       "Designing a fair credit metering system that accounts for wildly different token costs per model.",
     ],
     screenshots: [
-      { label: "Dashboard", placeholder: true },
-      { label: "Quiz Interface", placeholder: true },
-      { label: "Learning Path", placeholder: true },
+      { label: "Screen 1",  src: "/images/learneze/01.png" },
+      { label: "Screen 2",  src: "/images/learneze/02.png" },
+      { label: "Screen 3",  src: "/images/learneze/03.png" },
+      { label: "Screen 4",  src: "/images/learneze/04.png" },
+      { label: "Screen 5",  src: "/images/learneze/05.png" },
+      { label: "Screen 6",  src: "/images/learneze/06.png" },
+      { label: "Screen 7",  src: "/images/learneze/07.png" },
+      { label: "Screen 8",  src: "/images/learneze/08.png" },
+      { label: "Screen 9",  src: "/images/learneze/09.png" },
+      { label: "Screen 10", src: "/images/learneze/10.png" },
     ],
   },
   {
@@ -155,9 +162,10 @@ export const projects = [
       "Running sentiment analysis in parallel with chat responses without adding perceptible latency.",
     ],
     screenshots: [
-      { label: "Chat Interface", placeholder: true },
-      { label: "Mood Tracker", placeholder: true },
-      { label: "Wellness Dashboard", placeholder: true },
+      { label: "Screen 1", src: "/images/therapyamigo/01.webp" },
+      { label: "Screen 2", src: "/images/therapyamigo/02.webp" },
+      { label: "Screen 3", src: "/images/therapyamigo/03.webp" },
+      { label: "Screen 4", src: "/images/therapyamigo/04.webp" },
     ],
   },
   {
@@ -269,7 +277,13 @@ export const projects = [
       "Implementing granular RBAC that prevents any role from accessing another's data while keeping the codebase DRY.",
       "Building real-time session management that handles dropped connections and resumption gracefully.",
     ],
-    screenshots: [],
+    screenshots: [
+      { label: "Screen 1", src: "/images/betterlyf/01.png" },
+      { label: "Screen 2", src: "/images/betterlyf/02.png" },
+      { label: "Screen 3", src: "/images/betterlyf/03.png" },
+      { label: "Screen 4", src: "/images/betterlyf/04.png" },
+      { label: "Screen 5", src: "/images/betterlyf/05.png" },
+    ],
   },
   {
     slug: "oyopp",
@@ -305,7 +319,10 @@ export const projects = [
       "Building a reliable real-time tracking system that handles intermittent mobile connectivity from providers in the field.",
       "Implementing fair and transparent split-payment logic that satisfies both vendors and platform economics.",
     ],
-    screenshots: [],
+    screenshots: [
+      { label: "Screen 1", src: "/images/oyoapp/01.png" },
+      { label: "Screen 2", src: "/images/oyoapp/02.png" },
+    ],
   },
   {
     slug: "expertopinion",
