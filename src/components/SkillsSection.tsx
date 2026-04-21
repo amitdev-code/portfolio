@@ -9,7 +9,7 @@ import {
   SiOpenai, SiGooglegemini,
   SiMongodb, SiPostgresql,
   SiDocker, SiGithubactions,
-  SiGit, SiRedis, SiSocketdotio,
+  SiGit, SiRedis, SiSocketdotio, SiApachekafka, SiWebrtc,
 } from "react-icons/si";
 import { FaRobot, FaBrain, FaServer, FaPlug, FaAws } from "react-icons/fa";
 
@@ -87,6 +87,9 @@ const skillCategories: { name: string; color: string; items: SkillItem[] }[] = [
       { label: "Git",              icon: <SiGit /> },
       { label: "REST APIs",        icon: <FaServer /> },
       { label: "WebSockets",       icon: <SiSocketdotio /> },
+      { label: "Socket.io",        icon: <SiSocketdotio /> },
+      { label: "WebRTC",           icon: <SiWebrtc /> },
+      { label: "Kafka",            icon: <SiApachekafka /> },
       { label: "Third Party APIs", icon: <FaPlug /> },
     ],
   },

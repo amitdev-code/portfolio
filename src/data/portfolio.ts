@@ -19,7 +19,7 @@ export const skills = {
   "AI / ML": ["OpenAI GPT-4", "Google Gemini", "Claude", "AI Agents", "Prompt Engineering", "NLP", "Generative AI"],
   Databases: ["MongoDB", "PostgreSQL"],
   "DevOps & Cloud": ["AWS Lambda", "AWS EC2", "AWS S3", "AWS SQS", "Docker", "CI/CD", "Serverless"],
-  "Tools & Tech": ["Git", "REST APIs", "WebSockets", "Redis", "Third Party APIs"],
+  "Tools & Tech": ["Git", "REST APIs", "WebSockets", "Socket.io", "WebRTC", "Kafka", "Redis", "Third Party APIs"],
 };
 
 export const experience = [
@@ -78,6 +78,9 @@ export const projects = [
     gradient: "from-neutral-700 to-neutral-900",
     icon: "🎓",
     featured: true,
+    github: [
+      { label: "GitHub", url: "https://github.com/amitdev-code/learnEze" },
+    ],
     goal: "Replace static, one-size-fits-all course content with a dynamic learning experience that genuinely adapts to each student's pace, gaps, and strengths — powered by AI.",
     problem:
       "Traditional e-learning platforms dump content at students and hope for the best. No personalization. No real feedback loops. Result: low completion rates and mediocre outcomes.",
@@ -116,11 +119,15 @@ export const projects = [
     shortDesc:
       "A privacy-first mental health platform with an AI companion for emotional support, real-time mood tracking, and personalized wellness guidance — available 24/7.",
     category: "AI / HealthTech",
-    tags: ["Node.js", "NestJS", "OpenAI", "Gemini", "WebSockets", "MongoDB"],
+    tags: ["Node.js", "NestJS", "OpenAI", "Gemini", "WebSockets", "MongoDB", "React Native"],
     color: "#fff",
     gradient: "from-neutral-600 to-neutral-900",
     icon: "🧠",
     featured: true,
+    github: [
+      { label: "Backend", url: "https://github.com/amitdev-code/therapyamigo_backend" },
+      { label: "Mobile App (React Native)", url: "https://github.com/amitdev-code/therapyamigo_app" },
+    ],
     goal: "Give anyone immediate, stigma-free access to emotional support — not as a replacement for therapy, but as a compassionate first touchpoint that's always available.",
     problem:
       "Therapy is expensive, waitlists are long, and asking for help is hard. Most people in crisis have nowhere to turn at 2am when they need support most.",

@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Target, Lightbulb, Zap, Code2, AlertTriangle, CheckCircle2, ImageIcon } from "lucide-react";
+import { GithubIcon } from "@/components/SocialIcons";
+import { getTechIcon } from "@/lib/techIcons";
 import { projects } from "@/data/portfolio";
 
 type Project = (typeof projects)[0];
@@ -34,18 +36,32 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
           transition={{ duration: 0.8 }}
           className="mb-20 pt-8"
         >
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex flex-wrap items-center gap-2 mb-6">
             <span className="tag">{project.category}</span>
             {"url" in project && project.url && (
               <a
                 href={project.url as string}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-xs text-white/50 hover:text-white transition-colors border border-white/10 hover:border-white/30 rounded-full px-3 py-1"
+                className="flex items-center gap-1.5 text-xs text-white/65 hover:text-white transition-colors border border-white/10 hover:border-white/30 rounded-full px-3 py-1"
               >
                 Live Site <ArrowUpRight size={11} />
               </a>
             )}
+            {"github" in project && Array.isArray(project.github) &&
+              (project.github as { label: string; url: string }[]).map((repo) => (
+                <a
+                  key={repo.url}
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-xs text-white/65 hover:text-white transition-colors border border-white/10 hover:border-white/30 rounded-full px-3 py-1"
+                >
+                  <GithubIcon size={12} />
+                  {repo.label}
+                </a>
+              ))
+            }
           </div>
           <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-4">
             {project.title}
@@ -119,13 +135,36 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {Object.entries(project.techDetails).map(([layer, techs]) => {
               if (!techs || techs.length === 0) return null;
+              const layerColors: Record<string, string> = {
+                frontend:       "text-cyan-400",
+                backend:        "text-green-400",
+                ai:             "text-purple-400",
+                database:       "text-orange-400",
+                infrastructure: "text-blue-400",
+              };
+              const labelColor = layerColors[layer] ?? "text-white/50";
               return (
                 <div key={layer} className="card p-5 card-hover">
-                  <div className="text-xs text-white/65 uppercase tracking-widest mb-3">{layer}</div>
-                  <div className="space-y-1">
-                    {(techs as string[]).map((t: string) => (
-                      <div key={t} className="text-sm text-white/80 font-medium">{t}</div>
-                    ))}
+                  <div className={`text-xs font-semibold uppercase tracking-widest mb-4 ${labelColor}`}>
+                    {layer}
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {(techs as string[]).map((t: string) => {
+                      const tech = getTechIcon(t);
+                      return (
+                        <div
+                          key={t}
+                          className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/8 hover:border-white/20 transition-colors"
+                        >
+                          {tech && (
+                            <span className="text-sm leading-none" style={{ color: tech.color }}>
+                              {tech.icon}
+                            </span>
+                          )}
+                          <span className="text-xs text-white/80 font-medium whitespace-nowrap">{t}</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               );
