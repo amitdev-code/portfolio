@@ -34,9 +34,18 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
           transition={{ duration: 0.8 }}
           className="mb-20 pt-8"
         >
-          <div className="flex items-center gap-4 mb-6">
-            <span className="text-5xl">{project.icon}</span>
+          <div className="flex items-center gap-3 mb-6">
             <span className="tag">{project.category}</span>
+            {"url" in project && project.url && (
+              <a
+                href={project.url as string}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs text-white/50 hover:text-white transition-colors border border-white/10 hover:border-white/30 rounded-full px-3 py-1"
+              >
+                Live Site <ArrowUpRight size={11} />
+              </a>
+            )}
           </div>
           <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-4">
             {project.title}
@@ -155,27 +164,28 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
           </div>
         </motion.div>
 
-        {/* Screenshots */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.7 }}
-          className="mb-20"
-        >
-          <div className="flex items-center gap-2 text-xs text-white/65 uppercase tracking-widest mb-6">
-            <ImageIcon size={14} />
-            Screenshots
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {project.screenshots.map((shot, i) => (
-              <div key={i} className="card aspect-video flex flex-col items-center justify-center gap-3 card-hover">
-                <span className="text-3xl">{project.icon}</span>
-                <span className="text-xs text-white/65">{shot.label}</span>
-                <span className="text-xs text-white/10">Coming soon</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        {/* Screenshots — only shown when available */}
+        {project.screenshots.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+            className="mb-20"
+          >
+            <div className="flex items-center gap-2 text-xs text-white/65 uppercase tracking-widest mb-6">
+              <ImageIcon size={14} />
+              Screenshots
+            </div>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {project.screenshots.map((shot, i) => (
+                <div key={i} className="card aspect-video flex flex-col items-center justify-center gap-3 card-hover">
+                  <span className="text-xs text-white/65">{shot.label}</span>
+                  <span className="text-xs text-white/20">Coming soon</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
 
         {/* Other projects */}
         <div className="border-t border-white/5 pt-12">
@@ -184,12 +194,11 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
             {otherProjects.map((p) => (
               <Link key={p.slug} href={`/projects/${p.slug}`}>
                 <div className="card p-5 card-hover flex items-center gap-4 group">
-                  <span className="text-2xl">{p.icon}</span>
                   <div className="flex-1 min-w-0">
                     <div className="text-white font-bold text-sm">{p.title}</div>
-                    <div className="text-xs text-white/65 truncate">{p.tagline}</div>
+                    <div className="text-xs text-white/65 truncate mt-0.5">{p.tagline}</div>
                   </div>
-                  <ArrowUpRight size={14} className="text-white/65 group-hover:text-white/80 shrink-0 transition-colors" />
+                  <ArrowUpRight size={14} className="text-white/40 group-hover:text-white shrink-0 transition-colors" />
                 </div>
               </Link>
             ))}

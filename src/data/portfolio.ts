@@ -189,11 +189,151 @@ export const projects = [
       "Building interactive charts that remain performant when rendering thousands of live data points.",
       "Implementing granular RBAC that works across different business units with conflicting data access policies.",
     ],
-    screenshots: [
-      { label: "Analytics Overview", placeholder: true },
-      { label: "Trading Dashboard", placeholder: true },
-      { label: "Data Visualization", placeholder: true },
+    screenshots: [],
+  },
+  {
+    slug: "unlocklife",
+    title: "Unlocklife",
+    tagline: "Senior Health Club — Wellness for the 50+ Community",
+    shortDesc:
+      "A full-featured health and wellness platform built exclusively for seniors, combining fitness tracking, community engagement, expert health consultations, and curated lifestyle content.",
+    category: "HealthTech",
+    tags: ["React.js", "Node.js", "NestJS", "MongoDB", "AWS", "REST APIs"],
+    url: "https://www.unlocklife.today/",
+    goal: "Build a digital health club that genuinely serves the 50+ demographic — making wellness accessible, social, and easy to navigate without technical barriers.",
+    problem:
+      "Most health apps are built for young, tech-savvy users. Seniors are largely ignored despite having the highest healthcare engagement and spending power, leaving a massive underserved gap in the market.",
+    solution:
+      "Designed and built a senior-first platform with large, accessible UI components, simplified navigation, and health-specific features like expert consultations, guided fitness programs, and peer community groups tailored to the 50+ lifestyle.",
+    impact: [
+      "Delivered a fully accessible UI optimized for the 50+ age group",
+      "Integrated expert health consultation booking with real-time availability",
+      "Built community features enabling peer-to-peer wellness accountability",
+      "Launched subscription model with tiered membership plans",
     ],
+    techDetails: {
+      frontend: ["React.js", "Tailwind CSS", "Responsive Design"],
+      backend: ["Node.js", "NestJS", "REST APIs"],
+      ai: [],
+      database: ["MongoDB", "Redis"],
+      infrastructure: ["AWS EC2", "AWS S3", "CI/CD"],
+    },
+    architecture:
+      "NestJS modular backend with separate services for user profiles, health data, consultation booking, and content delivery. React frontend built with accessibility-first principles — high contrast, large touch targets, and simplified navigation flows.",
+    challenges: [
+      "Designing an intuitive UX for users who are not digital natives — every interaction had to be obvious and forgiving.",
+      "Building a real-time consultation booking system that syncs expert availability across time zones.",
+      "Balancing feature richness with simplicity — the platform needed to feel powerful without overwhelming its users.",
+    ],
+    screenshots: [],
+  },
+  {
+    slug: "betterlyf",
+    title: "Betterlyf",
+    tagline: "Online Mental Health Platform — Full Dashboard Suite",
+    shortDesc:
+      "A comprehensive mental health platform connecting users with licensed counsellors. Owned the end-to-end development of all four dashboards: User, Counsellor, Corporate, and Admin.",
+    category: "HealthTech / Mental Health",
+    tags: ["React.js", "Node.js", "PostgreSQL", "WebSockets", "AWS", "REST APIs"],
+    url: "https://betterlyf.com/",
+    goal: "Create a professional-grade mental health platform that serves four distinct user personas — individuals seeking help, licensed counsellors, corporate HR teams, and platform administrators — each with purpose-built workflows.",
+    problem:
+      "Existing mental health platforms had generic one-size-fits-all dashboards that didn't account for the fundamentally different needs of each stakeholder. Counsellors needed scheduling tools; corporates needed utilization reports; admins needed oversight controls.",
+    solution:
+      "Built four distinct, role-aware dashboards from the ground up. Each dashboard is tailored to its persona's primary jobs-to-be-done — from session scheduling and progress notes for counsellors, to utilization analytics and employee wellness tracking for corporate HR.",
+    impact: [
+      "Delivered 4 fully functional dashboards: User, Counsellor, Corporate, Admin",
+      "Real-time session chat and video consultation integrations",
+      "Corporate dashboard with employee wellness analytics and reporting",
+      "Admin panel with full platform oversight, user management, and content moderation",
+    ],
+    techDetails: {
+      frontend: ["React.js", "Tailwind CSS", "WebSockets", "Chart.js"],
+      backend: ["Node.js", "REST APIs", "WebSockets"],
+      ai: [],
+      database: ["PostgreSQL", "Redis (session)"],
+      infrastructure: ["AWS EC2", "AWS S3", "Docker"],
+    },
+    architecture:
+      "Role-based access control (RBAC) at the API layer gates all four dashboard views. Shared component library across dashboards with role-specific modules loaded dynamically. WebSocket layer handles real-time messaging and session status updates without polling.",
+    challenges: [
+      "Designing four cohesive yet distinct UX flows that share a consistent design language without becoming generic.",
+      "Implementing granular RBAC that prevents any role from accessing another's data while keeping the codebase DRY.",
+      "Building real-time session management that handles dropped connections and resumption gracefully.",
+    ],
+    screenshots: [],
+  },
+  {
+    slug: "oyopp",
+    title: "Oyopp",
+    tagline: "Multi-Vendor Home Services Marketplace",
+    shortDesc:
+      "An UrbanClap-style hyperlocal service marketplace connecting customers with verified service providers across categories like home cleaning, plumbing, electrical, beauty, and more.",
+    category: "Marketplace / On-Demand",
+    tags: ["React.js", "Node.js", "MongoDB", "WebSockets", "AWS", "Third Party APIs"],
+    url: "https://www.oyoapp.com/",
+    goal: "Build a scalable multi-vendor marketplace that makes booking trusted home services as simple as ordering food — with real-time provider tracking, transparent pricing, and verified professional profiles.",
+    problem:
+      "The local home services market is fragmented and trust-deficient. Customers have no reliable way to find, vet, or book service professionals, while skilled tradespeople lack digital tools to manage their business.",
+    solution:
+      "Built a two-sided marketplace with separate vendor and customer flows. Service providers get a mobile-friendly dashboard to manage bookings, availability, and earnings. Customers get a seamless discovery and booking experience with live tracking and secure payments.",
+    impact: [
+      "Multi-vendor onboarding with profile verification and service category management",
+      "Real-time booking and live service provider tracking",
+      "Integrated payment gateway with split payout to vendors",
+      "Rating and review system driving service quality accountability",
+    ],
+    techDetails: {
+      frontend: ["React.js", "Tailwind CSS", "WebSockets"],
+      backend: ["Node.js", "REST APIs", "WebSockets"],
+      ai: [],
+      database: ["MongoDB", "Redis"],
+      infrastructure: ["AWS EC2", "AWS S3", "Docker", "CI/CD"],
+    },
+    architecture:
+      "Two-sided marketplace architecture with separate API modules for the customer-facing app and vendor management portal. WebSocket layer enables real-time booking confirmations and service tracking. Vendor payouts handled via a queued job system to ensure reliable processing independent of the main request cycle.",
+    challenges: [
+      "Designing a discovery algorithm that surfaces relevant service providers by location, rating, and availability simultaneously.",
+      "Building a reliable real-time tracking system that handles intermittent mobile connectivity from providers in the field.",
+      "Implementing fair and transparent split-payment logic that satisfies both vendors and platform economics.",
+    ],
+    screenshots: [],
+  },
+  {
+    slug: "expertopinion",
+    title: "ExpertOpinion",
+    tagline: "Doctor-to-Doctor Medical Consultation Platform",
+    shortDesc:
+      "A HIPAA-aware telemedicine platform enabling general practitioners to request specialist opinions on complex cases — bridging the expertise gap in underserved medical settings.",
+    category: "MedTech / Telemedicine",
+    tags: ["React.js", "Node.js", "NestJS", "PostgreSQL", "WebSockets", "AWS"],
+    url: "https://expertopinion.md/",
+    goal: "Enable any doctor — regardless of location or specialty access — to get a second opinion from a qualified specialist within hours, improving diagnostic accuracy and patient outcomes.",
+    problem:
+      "GPs in smaller clinics and rural settings frequently encounter cases outside their expertise but lack direct access to specialists. Referrals are slow, expensive, and often unavailable — leaving patients in limbo.",
+    solution:
+      "Built a structured consultation platform where GPs upload case details, medical history, and reports, then receive a formal specialist opinion asynchronously. Real-time messaging handles follow-up questions. Specialists manage their caseloads through a dedicated portal.",
+    impact: [
+      "Reduced specialist consultation turnaround from days to hours",
+      "Structured case submission with medical report attachment and tagging",
+      "Specialist availability management and caseload dashboard",
+      "Audit trail for every consultation for medico-legal compliance",
+    ],
+    techDetails: {
+      frontend: ["React.js", "Tailwind CSS", "WebSockets"],
+      backend: ["Node.js", "NestJS", "REST APIs", "WebSockets"],
+      ai: [],
+      database: ["PostgreSQL", "Redis"],
+      infrastructure: ["AWS EC2", "AWS S3", "Docker", "CI/CD"],
+    },
+    architecture:
+      "NestJS backend with strict role separation between GP and Specialist users. Medical case data stored in PostgreSQL with encrypted file references in S3. Asynchronous consultation flow powered by a job queue — specialists are notified of new cases via WebSocket push, not polling.",
+    challenges: [
+      "Designing a case submission flow that captures enough clinical detail to be useful without creating friction for time-pressed GPs.",
+      "Ensuring all patient data handling meets privacy and compliance requirements throughout the stack.",
+      "Building a specialist matching algorithm that routes cases to the right domain expert based on specialty and availability.",
+    ],
+    screenshots: [],
   },
 ];
 
