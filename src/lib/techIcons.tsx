@@ -7,8 +7,9 @@ import {
   SiDocker, SiGithubactions,
   SiGit, SiRedis, SiSocketdotio,
   SiD3, SiChartdotjs, SiGraphql, SiJenkins, SiApachekafka, SiWebrtc,
+  SiGooglemaps, SiGooglecloud, SiTwilio, SiAgora, SiFacebook,
 } from "react-icons/si";
-import { FaRobot, FaBrain, FaServer, FaPlug, FaAws, FaDatabase, FaMobile } from "react-icons/fa";
+import { FaRobot, FaBrain, FaServer, FaPlug, FaAws, FaDatabase, FaMobile, FaVideo, FaPaintBrush } from "react-icons/fa";
 
 export const techIconMap: Record<string, { icon: React.ReactNode; color: string }> = {
   // Languages
@@ -80,6 +81,14 @@ export const techIconMap: Record<string, { icon: React.ReactNode; color: string 
   "Kafka":              { icon: <SiApachekafka />,     color: "#231F20" },
   "Apache Kafka":       { icon: <SiApachekafka />,     color: "#231F20" },
   "WebRTC":             { icon: <SiWebrtc />,          color: "#4285F4" },
+  // Integrations
+  "Google Maps API":    { icon: <SiGooglemaps />,      color: "#4285F4" },
+  "Google TTS / STT":  { icon: <SiGooglecloud />,     color: "#4285F4" },
+  "Twilio":             { icon: <SiTwilio />,          color: "#F22F46" },
+  "100ms":              { icon: <FaVideo />,            color: "#3D5AFE" },
+  "Agora":              { icon: <SiAgora />,           color: "#099DFD" },
+  "Facebook Business API": { icon: <SiFacebook />,    color: "#1877F2" },
+  "Adobe Experience":   { icon: <FaPaintBrush />,       color: "#FF0000" },
 };
 
 export function getTechIcon(name: string) {

@@ -10,8 +10,9 @@ import {
   SiMongodb, SiPostgresql,
   SiDocker, SiGithubactions,
   SiGit, SiRedis, SiSocketdotio, SiApachekafka, SiWebrtc,
+  SiGooglemaps, SiGooglecloud, SiTwilio, SiAgora, SiFacebook,
 } from "react-icons/si";
-import { FaRobot, FaBrain, FaServer, FaPlug, FaAws } from "react-icons/fa";
+import { FaRobot, FaBrain, FaServer, FaPlug, FaAws, FaVideo, FaPaintBrush } from "react-icons/fa";
 
 type SkillItem = { label: string; icon: React.ReactNode };
 
@@ -91,6 +92,19 @@ const skillCategories: { name: string; color: string; items: SkillItem[] }[] = [
       { label: "WebRTC",           icon: <SiWebrtc /> },
       { label: "Kafka",            icon: <SiApachekafka /> },
       { label: "Third Party APIs", icon: <FaPlug /> },
+    ],
+  },
+  {
+    name: "Integrations",
+    color: "text-rose-400",
+    items: [
+      { label: "Google Maps API",      icon: <SiGooglemaps /> },
+      { label: "Google TTS / STT",     icon: <SiGooglecloud /> },
+      { label: "Twilio",               icon: <SiTwilio /> },
+      { label: "100ms",                icon: <FaVideo /> },
+      { label: "Agora",                icon: <SiAgora /> },
+      { label: "Facebook Business API",icon: <SiFacebook /> },
+      { label: "Adobe Experience",     icon: <FaPaintBrush /> },
     ],
   },
 ];

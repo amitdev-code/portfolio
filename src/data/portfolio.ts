@@ -20,6 +20,7 @@ export const skills = {
   Databases: ["MongoDB", "PostgreSQL"],
   "DevOps & Cloud": ["AWS Lambda", "AWS EC2", "AWS S3", "AWS SQS", "Docker", "CI/CD", "Serverless"],
   "Tools & Tech": ["Git", "REST APIs", "WebSockets", "Socket.io", "WebRTC", "Kafka", "Redis", "Third Party APIs"],
+  "Integrations": ["Google Maps API", "Google TTS / STT", "Twilio", "100ms", "Agora", "Facebook Business API", "Adobe Experience"],
 };
 
 export const experience = [
