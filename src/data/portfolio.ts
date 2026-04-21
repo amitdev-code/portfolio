@@ -5,7 +5,7 @@ export const personalInfo = {
   email: "ams281997@gmail.com",
   phone: "+91 7388110797",
   linkedin: "https://linkedin.com/in/amikum9707/",
-  github: "https://github.com/amikum9707",
+  github: "https://github.com/amitdev-code",
   summary:
     "I engineer fast, intelligent web systems — from React frontends to serverless cloud backends — and specialize in wiring LLMs into real products that automate real workflows.",
   availableForWork: true,
